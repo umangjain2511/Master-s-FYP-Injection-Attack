@@ -32,7 +32,9 @@ public class JobEJB implements JobRemoteEJB {
 
     @Override
     public List<Jobs> searchJobs(String search) {
-        Query query = em.createNamedQuery("Jobs.findByKeywords").setParameter("keywords", search);
+       // Query query = em.createNamedQuery("Jobs.findByKeywords").setParameter("keywords", search);
+        String s = "SELECT j FROM Jobs j WHERE j.keywords = '" + search + "'";
+        Query query = em.createQuery(s);
         return query.getResultList();
     }
     

@@ -53,7 +53,7 @@ public class AdminEJB implements AdminRemoteEJB {
             data[1] = "incorrect";
         }
         return data;
-    }
+    } 
         
     
 }
