@@ -19,7 +19,6 @@
                         <h:inputSecret value="#{providerMBean.old_password}" size="10"/>
                         New password
                         <h:inputSecret value="#{providerMBean.new_password}" size="10">
-                            <f:validator validatorId="passvalidator"/>
                         </h:inputSecret>
                     </h:panelGrid>
                     <h:commandButton value="Submit" action='pass_success' rendered="#{providerMBean.correct}">
