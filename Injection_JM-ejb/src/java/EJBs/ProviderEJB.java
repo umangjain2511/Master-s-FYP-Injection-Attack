@@ -95,7 +95,7 @@ public class ProviderEJB implements ProviderRemoteEJB {
             }
         }
         max=max+1;
-        Query query = em.createNativeQuery("INSERT INTO Jobs (id,title,description,pay,keywords,e_uname,status) values(?,?,?,?,?,?,?)");
+        Query query = em.createNativeQuery("INSERT INTO Jobs (id,title,description,pay,keywords,euname,status) values(?,?,?,?,?,?,?)");
         query.setParameter(2, title);
         query.setParameter(3, description);
         query.setParameter(4, pay);
@@ -132,9 +132,9 @@ public class ProviderEJB implements ProviderRemoteEJB {
         Provider prov = (Provider)query.getResultList().get(0);
         String pass = prov.getPassword();
         if(pass.equals(old_password)){
-            Query query1 = em.createQuery("UPDATE Provider p SET p.password=:new_password WHERE p.username=:username");            
-         //   Query query1 = em.createQuery(s);
-            query1.setParameter("new_password", new_password);
+         //   Query query1 = em.createQuery("UPDATE Provider p SET p.password=:new_password WHERE p.username=:username");            
+            Query query1 = em.createQuery(s);
+            //query1.setParameter("new_password", new_password);
             query1.setParameter("username", username);
             int rowsUpdated3 = query1.executeUpdate();
             pass_set=true;

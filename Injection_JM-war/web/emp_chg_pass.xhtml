@@ -16,10 +16,10 @@
                         cellpadding = "15" cellspacing = "10"
                         rendered="#{providerMBean.correct}">
                         Old password
-                        <h:inputSecret value="#{providerMBean.old_password}" size="10"/>
+                        <h:inputText value="#{providerMBean.old_password}" size="10"/>
                         New password
-                        <h:inputSecret value="#{providerMBean.new_password}" size="10">
-                        </h:inputSecret>
+                        <h:inputText value="#{providerMBean.new_password}" size="10">
+                        </h:inputText>
                     </h:panelGrid>
                     <h:commandButton value="Submit" action='pass_success' rendered="#{providerMBean.correct}">
                         <f:actionListener binding="#{providerMBean.changePass()}" />
